@@ -14,8 +14,8 @@ pipeline {
                     def server = Artifactory.server 'artifactory'
 
                     // Read the download and upload specs:
-                    def downloadSpec = readFile 'artifactory/resources/props-download.json'
-                    def uploadSpec = readFile 'artifactory/resources/props-upload.json'
+                    def downloadSpec = readFile 'resources/props-download.json'
+                    def uploadSpec = readFile 'resources/props-upload.json'
 
                     // Download files from Artifactory:
                     def buildInfo1 = server.download spec: downloadSpec
