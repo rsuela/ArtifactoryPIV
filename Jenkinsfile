@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Clone'){
             steps {
-                git url: 'https://bitbucket.nsp.ird.govt.nz/scm/~17resu/jenkinsupgradepiv.git'
+                git url: 'https://github.com/rsuela/ArtifactoryPIV.git'
             }
         }
 
@@ -11,7 +11,7 @@ pipeline {
             steps {
                 script{
                     // Obtain an Artifactory server instance, defined in Jenkins --> Manage:
-                    def server = Artifactory.server 'TTAPRDAAP12'
+                    def server = Artifactory.server 'artifactory'
 
                     // Read the download and upload specs:
                     def downloadSpec = readFile 'artifactory/resources/props-download.json'
