@@ -25,10 +25,10 @@ pipeline {
                     def exists = fileExists 'Bazinga/ArtifactoryPipeline.zip'
 
                     if (exists) {
-    	                sh "echo File exist"
+    	                bat "echo File exist"
                     } else {
 	                    echo "File does not exist"
-                    	sh 'exit 1'
+                    	bat 'exit 1'
                     }
                   
                     // Merge the local download and upload build-info instances:
